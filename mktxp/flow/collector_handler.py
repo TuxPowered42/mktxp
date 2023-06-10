@@ -108,7 +108,13 @@ class CollectorHandler:
         total_scrape_timer.cancel()
 
 
-    def collect(self):
+    def describe(self, **kwargs):
+        print(f'Describe is called {kwargs}')
+        yield from []
+
+
+    def collect(self, **kwargs):
+        print(f'Collect is called {kwargs}')
         if not self._valid_collect_interval():
             return
 
